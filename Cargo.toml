@@ -1,0 +1,6 @@
+[package]
+name = "nonrand"
+version = "0.1.0"
+authors = ["Danny Milosavljevic <dannym@scratchpost.org>"]
+
+[dependencies]
