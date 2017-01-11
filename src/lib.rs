@@ -5,19 +5,22 @@ pub trait Rng {
 }
 
 pub struct ThreadRng {
+    seed : u32
 }
 
 pub fn thread_rng() -> ThreadRng {
-    ThreadRng { }
+    ThreadRng { seed: 0u32 }
 }
 
 impl Rng for ThreadRng {
     fn next_u32(&mut self) -> u32 {
-        1u32
+        self.seed += 1;
+        return self.seed;
     }
 
     fn next_u64(&mut self) -> u64 {
-        1u64
+        self.seed += 1;
+        return self.seed as u64;
     }
 }
 
