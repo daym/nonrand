@@ -14,12 +14,12 @@ pub fn thread_rng() -> ThreadRng {
 
 impl Rng for ThreadRng {
     fn next_u32(&mut self) -> u32 {
-        self.seed += 1;
+        self.seed += 1u32;
         return self.seed;
     }
 
     fn next_u64(&mut self) -> u64 {
-        self.seed += 1;
+        self.seed += 1u32;
         return self.seed as u64;
     }
 }
